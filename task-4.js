@@ -1,10 +1,16 @@
-const word = prompt('Ваше слово')
-const wordLenght = word.lenght
+// Задача №4
 
-wordLenght ** 0.5
-Math.pow(wordLenght, 0.5)
-Math.sqrt(wordLenght)
+// Задана переменная word со строковым значением. Создайте переменную result с условием: если из длины переменной word вычисляется квадратный корень (без дробной части) - переменная result должна содержать ответ 1, в противном случае - 0
 
-const result = 1 //дописать логику
- 
-console.log(result)
+// Пример:
+
+// let word = 'меню'
+
+// Результат:
+
+// 1
+
+const word = prompt("Введите слово");
+const result = Math.sqrt(word.length) % 1 === 0 ? 1 : 0;
+
+console.log(result);

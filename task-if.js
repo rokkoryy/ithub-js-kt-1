@@ -32,14 +32,14 @@
 
 // console.log(message)
 
-const role = 'admin'
-const permissions = ['read']
+const role = "admin";
+const permissions = ["read"];
 
 switch (role) {
-    case 'admin':
-        permissions.push = (['execute'])
-    case 'user':
-        permissions.push = (['write'])
+  case "admin":
+    permissions.push = ["execute"];
+  case "user":
+    permissions.push = ["write"];
 }
 
-console.log(permissions)
+console.log(permissions);
