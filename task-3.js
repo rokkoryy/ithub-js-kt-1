@@ -34,40 +34,52 @@
 
 // Делить на 0 нельзя!
 
-const a = +prompt("Число A");
-if (!Number.isFinite(a)) {
-  throw new Error("Число А указано неправильно");
+function getUserImput() {
+  const a = +prompt("Число A");
+  const b = +prompt("Число B");
+  const sign = prompt("Операция (*/+-)");
 }
 
-const b = +prompt("Число B");
-if (!Number.isFinite(b)) {
-  throw new Error("Число B указано неправильно");
+function validateImput(number1, number2, operationSing) {
+  if (!Number.isFinite(number1)) {
+    throw new Error("Число А указано неправильно");
+  }
+
+  if (!Number.isFinite(number2)) {
+    throw new Error("Число B указано неправильно");
+  }
+
+  if (
+    operationSing !== "*" &&
+    operationSing !== "/" &&
+    operationSing !== "+" &&
+    operationSingß !== "-"
+  ) {
+    throw new Error("Математическая операция указана неправильно");
+  }
+
+  if (operationSing === "/" && number2 === 0) {
+    throw new Error("Деление на ноль");
+  }
 }
 
-const sign = prompt("Операция (*/+-)");
-if (sign !== "*" && sign !== "/" && sign !== "+" && sign !== "-") {
-  throw new Error("Математическая операция указана неправильно");
-}
+function calculateResult() {
+  let result;
 
-let result;
-
-switch (sign) {
-  case "*":
-    result = a * b;
-    break;
-  case "+":
-    result = a + b;
-    break;
-  case "-":
-    result = a - b;
-    break;
-  case "/":
-    if (b === 0) {
-      throw new Error("На ноль делить нельзя");
-    } else {
+  switch (sign) {
+    case "*":
+      result = a * b;
+      break;
+    case "+":
+      result = a + b;
+      break;
+    case "-":
+      result = a - b;
+      break;
+    case "/":
       result = a / b;
-    }
-    break;
-}
+      break;
+  }
 
-console.log(result);
+  console.log(result);
+}
